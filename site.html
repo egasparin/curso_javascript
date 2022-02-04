@@ -16,217 +16,15 @@
         </header>
         <section>
             <header>
-                <h2>O que são tags?</h2>
+                <h2>O que é o Javascript?</h2>
                 <p>
-                    Tags são marcadores de conteúdo e são utilizadas para definir diferentes categorias de conteúdos a serem apresentados na página
-                </p>
-                <h3>Quais são as principais tags?</h3>
-                <p>
-                    As principais tags existentes e disponívies em HTML5 podem ser divididas em N grupos distintos:
-                </p>
-                <ol>
-                    <li>Estrutura</li>
-                    <li>Semântica</li>
-                    <li>Textos e links</li>
-                    <li>Imagens</li>
-                    <li>Listas</li>
-                </ol>
-                
-            </header>
-            <article>
-                <h2>Tags de Estrutura</h2>
-                <h3>&lthtml&gt&lt/html&gt</h3>
-                <p>
-                    A tag html atua como um delimitador dos elementos presentes na página, inclusive de apresentação e estrutura</p>
-                <p>
-                    Para que o '<' e o '>' não seja compreendido como parte do código, deve-se usar o '& lt' e '& gt' sem espaços e sem aspas </p>
-
-                <h3>&lthead&gt</h3>
-                <p> 
-                    A tag head contem informações de metadados que serão lidos pelo navegador, como titulo, e a configuração de codificação
-                </p>
-                <h3>&ltbody&gt</h3>    
-                <p>
-                    Responsável por conter todo o conteúdo visível da página
+                    Javascript é uma linguagem de programação interpretada, muito utilizada na web por permitir interação/manipulação com HTML diretamente no dispositivo clientes. Tal interação é possível em razão do Document Object Model (DOM), que é uma interface de programação para os documentos HTML e XML. Esta interface representa a página por meios de nós e objetos, de forma que os programas possam alterar a estrutura do documento, alterar o estilo e conteúdo. 
                 </p>
 
-                <h2>Tags Semânticas</h2>
-                <h3>&ltsection&gt</h3>
-                <p>
-                    É a mais genérica, podendo conter qualquer tipo de conteúdo
-                </p>
+                <img src="dom-model.png">
 
-                <h3>&ltheader&gt</h3>
+                <h3>Como usar o Javascript?</h3>
                 <p>
-                    Corresponde ao cabeçalho da página
-                </p>
-                <h3>&ltarticle&gt</h3>
-                <p>
-                    É utilizada para representar um conteúdo de relevância na página, e pode conter outra tags internas, como headers
-                </p>
-
-                <h3>&ltaside&gt</h3>
-                <p>
-                    Geralmente é usado para representar conteúdo nas laterais da página
-                </p>
-
-                <h3>&ltfooter&gt</h3>
-                <p>
-                    É o rodapé da página/elemento em que esta contido. Pode ser usado para informaões de contato ou referencias
-                </p>
-
-                <h3>&lth1&gt .. &lth6&gt</h3>
-                <p>
-                    Correspondem à hierarquia de titulos, sendo h1 a mais alta e h6 a mais baixa. Por boa prática, cada página deve possuir somente UM h1
-                </p>
-            </article>
-
-            <article>
-                <h2>Textos e Links</h2>
-
-                <h3>&ltp&gt</h3>
-                <p>
-                    É utilizada para demarcar regiões com texto denso, incluindo imagens e links
-                </p>
-
-                <h3>&lta&gt</h3>
-                <p>
-                    Esta tag (anchor) é utilizada para demarcar hiperlinks, permitindo referenciar outros sites por meio do 'href=endereco.do site', e-mails por meio do href="mailto: email" e telefones href="tel:telefone"
-                </p>
-                <p>
-                    Pode-se colocar um texto em substituição ao link, como nome para este, conforme mostrado abaixo
-                </p>  
-                <p class="code">&lta href="www.google.com"&gtGoogle&lt/a&gt</p>
-                <p>
-                    Outro importante elemento desta tag é o 'target' que dira ao navegador o que deve ser feito ao clicar no link, como por exemplo abrir em nova janela, por meio do parametro target="_blank"
-                </p>
-
-                <h3>&ltimg&gt</h3>
-                <p>
-                    Esta tag é utilizada para adicionar imagens à pagina, e possui apenas dois parametros, o 'src' que indica o diretório/link que contem a imagem e o 'alt' que é utilizado para representar um texto alternativo, caso o carregamento da imagem falhe
-                </p>
-                <img src="imagem.jpeg" alt="Texto da imagem, caso ela quebre">
-
-            </article>
-            
-            <article>
-
-                <h2>Listas</h2>
-                <p>
-                    São utilizadas para dispor de conteúdo em tópicos ordenados ou não
-                </p>
-                <ul type="square">
-                    <li>
-                    &ltul&gt: Lista não ordenada, com um marcador na frente do texto
-                    </li>
-                </ul>
-                <ol>
-                    <li>
-                    &ltol&gt: Lista ordenada, com números ou letras frente do texto
-                    </li>
-                </ol>
-                <p>
-                    O &ltli&gt: é um item de lista propriamente dito, pode ser utilizado sozinho, mas é interessante nos tipos acima descritos
-                </p>
-            </article>
-        </section> 
-
-        <section>
-            <h2>O que um arquivo CSS? </h2>
-            <p>
-                Cascading Style Sheet (CSS) é um arquivo usado para estilizar elementos escritos em  linguagem de marcação HTML. Uma das principais vantagens é que definido o estilo a ser utilizado, este pode ser usado para um diferente conjunto de paginas, desde que seja colocado em um arquivo externo e referenciado no head da página, entre as tags 'style'.
-            </p>
-            <article>
-                <h3>Box Model</h3>
-                <p>
-                    O box model é a maneira pela qual o navegador apresenta os elementos de um html. Pode ser visualizado como uma caixa ao redor de cada elemento.
-                </p>
-                <img src="box-model.png" alt="Um exemplo de box model">
-				<p>
-					Os principais elementos do box model são explicitados abaixo:
-				</p>
-				<li>
-					<b>Content: </b>é o espaço que contém o conteudo propriamente dito, e possui fundo, uma cor de fonte ou uma imagem. Possui como dimensões a largura box de conteúdo, e altura do box de conteúdo.
-				</li>
-				<li>
-					<b>Padding: </b> é o espaçamento entre o conteúdo e a borda, sendo similar ao preenchimento de célula das planilhas eletronicas. Suas dimensões são a largura do padding-box e a altura do padding-box.
-				</li>
-				<li>
-					<b>Border: </b> é a margem em si, e possui como atributos a espessura (em px), o estilo (solid, dotted e dashed), e a cor (nome ou código hexa).
-				</li>
-				<li>
-					<b>Margin: </b>é o espaçamento entre a borda e os demais elementos do html. Suas dimensões são a largura e altura, podendo ser informadas em pares (dimensão vertical e horizontal), única (um tamanho para todos os lados) ou individual.
-				</li>
-				
-				<h3>Estilizando texto</h3>
-				<p>
-					Pode-se alterar também o texto dentro dos elemntos do html, há basicamente as seguintes propriedades que podem ser utilizadas
-				</p>
-				<li>
-					<b>font-family: </b>é a fonte propriamente dita. É recomendado sempre declarar ao menos duas, separadas por ',', pois caso uma delas não seja reconhecida pelo navegador, a outra será considerada
-				</li>
-				<li>
-					<b>font-size: </b>define o tamanho da fonte utilizada, sempre deve ser dimensionada em 'px'
-				</li>
-				<li>
-					<b>font-style: </b>define o estilo da fonte, 'normal' ou 'italic'
-				</li>
-				<li>
-					<b>font-weight: </b>define o tamanho da fonte, se esta é bold ou normal
-				</li>
-				
-            </article>			
-        </section>
-		
-		<section>
-			<article>
-				<h2>Usando um CSS</h2>
-				
-				<p>
-					Uma maneira eficiente de usar o css é usar um arquivo externo, desta forma pode-se criar um estilo e fazer uso em diferentes páginas. Para isso, deve-se declarar o arquivo no 'head' da pagina, utilizando uma tag 'link'
-				</p>
-				
-				<p class="code">&ltlink href="arquivos_de_estilo.css" rel="stylesheet"&gt</p>
-				
-				<h3>Definindo os estilos de cada tag</h3>
-				<p>
-					Para definir qualquer estilo para qualquer tag, deve-se considerar a seguinte estrutura de regras:
-				</p>
-				
-				<p>elemento_tag { property : value; }</p>
-				
-				<li>
-					<b>elemento_tag: </b> corresponde ao nome do elemento HTML a ser estilizados. Também é chamado de seletor
-				</li>
-				<li>
-					<b>property: </b> corresponde a propriedade do elemento HTML a ser estilizados, como a cor, o estilo e etc
-				</li>
-				<li>
-					<b>value: </b> corresponde ao valor da propriedade do elemento HTML a ser estilizados.
-				</li>
-				
-				<h3>Tipos de seletores</h3>
-				<p>
-					Há alguns tipos de seletores a serem usados e que devem ser explicitados
-				</p>
-				<li>
-					<b>seletor de ID: </b> é um elemento na página com o ID específicado. É referenciado como <b>#um_id</b>
-				</li>
-				<li>
-					<b>seletor de classe: </b> é um elemento na página com uma classe específicada. É referenciado como <b>.uma_classe</b>
-				</li>
-				<li>
-					<b>hover: </b> é usado para definir um estilo para um item quando o mouse é posicionado sobre este. É referenciado como <b>seletor: hover</b>
-				</li>
-			</article>
-		</section>
-		
-		<section>
-			<article>
-				
-				<h2>Usando Javascript</h2>
-				
-				<p>
 					Algo bem interessante é poder usar Javascript integrado à pagina html.
 					Há duas formas distintas para esta integração, a primeira é a inclusão do código diretamente no documento HTML, sendo delimitados pela tag 'script' 
 				</p>
@@ -236,16 +34,53 @@
 				</p>
 				
 				<p class="code">&ltscript src="js/meu_script.js"&gt&lt/script&gt</p>
-				
-				<h3>Um pequeno exemplo</h3>
-				
+                				
 				<p>
-					Para exemplificar o uso, abaixo ha um botão que informa ao usuário quando clicado, o horário atual:
-					<input type="submit" value="HORA" name="tBotao" id="cBotao" onclick="horario()">
-				</p>
-			
+					Já para fazer a chamada, deve-se realizar a chamada da função a ser executada do Javascript, como no exemplo abaixo, onde um botão ao ser clicado informa por meio de um 'alert' o horário atual:
+				</p>	
+                
+                <p class="code">&lttype="submit" value="HORA" name="tBotao" id="cBotao" onclick="horario()"&gt</p>
+
+                <p>
+                    No entanto, o uso do 'alert' pode não ser interessante por não fornecer informações sobre a execução. Desta maneira, a alternativa apresentada em aula foi o uso do 'console.log()', que fornece acesso ao console de depuração do navegador. Seu uso deve ser feito da seguinte forma:
+                </p>
+                <p class="code">console.log("Alguma saida string")</p>
+
 			</article>
 		</section>
+
+        <section>
+            <article>
+                <h2>Javascript</h2>
+                <p>
+                    Nesta linguagem, as variáveis são <b>dinamicamente tipadas</b>, ou seja, o proprio interpretador consegue determinar o tipo de variável, nao necessitando declarar. No entanto deve-se atentar a algumas caracteristicas:
+                </p>
+                <p>
+                    <b>const nome_var : </b>Declara uma constante de escopo de bloco, cujo o valor é fixo, ou seja, somente leitura. Isso não significa que o valor é imutável, apenas que a variável constante não pode ser alterada ou retribuída.
+                </p>
+                <p>
+                    <b>let nome_var : </b>Declara uma variável local de escopo do bloco, instrução, ou em uma expressão na qual ela é usada, e somente neste, sendo não reconhecida por qualquer outro contexto.
+                </p>
+                <p>
+                    <b>var nome_var : </b>Declara uma variável que é reconhecida em diferentes contextos, no entanto seu valor é tido como indefinido fora do escopo no qual é atribuido.
+                </p>
+                <p>
+                    <b>nome_var : </b>Declara uma variável global, reconhecida e acessível em diferentes escopos do script, desde que criada antes da execução destes.
+                </p>
+
+                <h3>Estruturas de dados</h3>
+                <p>
+                    Além das simples declarações demosntradas acima, temos as seguintes estruturas disponíveis:
+                </p>
+
+                <input type= "submit" value="HORA" name="tBotao" id="cBotao" onclick="horario()"></input>
+
+                <input type= "submit" value="MINUTE" name="tBotao" id="cBotao" onclick="teste()"></input>
+
+
+
+            </article>
+        </section>
 
 
         <footer>

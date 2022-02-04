@@ -1,4 +1,12 @@
 function horario(){
     var horario = new Date;
-	alert("Horario atual: " + horario.getHours() +":" +("00" + horario.getMinutes()).slice(-2));	
+    let minutos = horario.getMinutes();
+    seconds = horario.getSeconds();
+	console.log("Horario atual: " + horario.getHours() +":" +("00" + horario.getMinutes()).slice(-2));	
+}
+
+function teste(){
+    console.log("Horario: " +horario.getHours);
+    // console.log("Minutos: " +minutos );
+    console.log("Segundos: " +seconds );
 }
