@@ -1,3 +1,9 @@
+function mudaTexto(){
+    document.getElementById("id").innerHTML = "<b>Mudou o texto e adicionou negrito</b>";
+}
+
+
+/*
 function horario(){
     var horario = new Date;
     let minutos = horario.getMinutes();
@@ -10,3 +16,4 @@ function teste(){
     // console.log("Minutos: " +minutos );
     console.log("Segundos: " +seconds );
 }
+*/

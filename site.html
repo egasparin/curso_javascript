@@ -51,7 +51,7 @@
 
         <section>
             <article>
-                <h2>Javascript</h2>
+                <h2>Dados no Javascript</h2>
                 <p>
                     Nesta linguagem, as variáveis são <b>dinamicamente tipadas</b>, ou seja, o proprio interpretador consegue determinar o tipo de variável, nao necessitando declarar. No entanto deve-se atentar a algumas caracteristicas:
                 </p>
@@ -68,20 +68,145 @@
                     <b>nome_var : </b>Declara uma variável global, reconhecida e acessível em diferentes escopos do script, desde que criada antes da execução destes.
                 </p>
 
-                <h3>Estruturas de dados</h3>
                 <p>
-                    Além das simples declarações demosntradas acima, temos as seguintes estruturas disponíveis:
+                    Além das simples declarações demosntradas acima, outras estruturas disponíveis, como é o caso dos:
                 </p>
 
-                <input type= "submit" value="HORA" name="tBotao" id="cBotao" onclick="horario()"></input>
+                <p>
+                    <b>arrays: </b>Um array pode conter elementos diversos, como strings e inteiros
+                </p>
+                <p class="code">um_array = ["Eu", 10, 1.45];</p>
 
-                <input type= "submit" value="MINUTE" name="tBotao" id="cBotao" onclick="teste()"></input>
+                <p>
+                    <b>dics: </b>Um dicionario se diferencia por possuir chaves e valores
+                </p>
+                <p class="code">um_array = {chave:"valor"};</p>
 
+                <h3>Estrutura Condicionais e de Repetição</h3>
+                <p>
+                    O Javascript possui como principal estrutura condicional o 'if', sendo sua estrutura apresentada a seguir e bastante similar a do C e do Java.
+                </p>
+                
+                <p class="code">
+                    if(condition){ 
+                    <br>codigo para executar se verdade
+                    <br>}else{
+                    <br>    codigo pra executar se falso;
+                    <br>};
+                </p>
+                
+                <p>
+                   Como estrutura de repetição, destaca-se o while, e o for e suas variantes. O primeiro, while, executa sempre que o condicional interno deste for verdadeiro.
+                </p>
+                
+                <p class="code">
+                    while(condition is true)
+                    <br>{ 
+                    <br>codigo para executar;
+                    <br>}
+                </p>
 
+                <p>
+                    Já o for possui algumas variantes interessantes. A mais comum é o semelhante ao C:
+                 </p>
+                 
+                 <p class="code">
+                     for(cont = initial ; cont &lt final ; increment)
+                     <br>{ 
+                     <br>codigo para executar;
+                     <br>}
+                 </p>
+
+                 <p>
+                    Já o for-in permite iterar sobre as propriedades enumeradas de um OBJETO de acordo com a ordem em que foram inseridos:
+                 </p>
+                 
+                 <p class="code">
+                     for(value in object)
+                     <br>{ 
+                     <br>codigo para executar;
+                     <br>}
+                 </p>
+
+                 <p>
+                    Por fim, temos o for-of, ideal para iterar sobre objetos iterativos, como arrays, dics e maps:
+                 </p>
+                 
+                 <p class="code">
+                     for(value of object)
+                     <br>{ 
+                     <br>codigo para executar;
+                     <br>}
+                 </p>
+                
+                 <h3>Funções</h3>
+                 <p>
+                     No Javascript podemos declarar funções normalmente, como em C, com a estrutura sendo apresentada abaixo.
+                 </p>
+                 
+                 <p class="code">
+                     function nome (parametros, ..){ 
+                     <br>código interno à função;
+                     <br>return algo;
+                     <br>}
+                 </p>
+
+                 <p>
+                    Outra forma interessante é atribuir uma função diretamente à uma variavel:
+                </p>
+                
+                <p class="code">
+                    let variavel = function (parametros, ..){ 
+                    <br>código interno à função;
+                    <br>return algo;
+                    <br>}
+                </p>
+
+                <p>
+                    Ou de forma mais compacta, declarar como um array function, o que torna mais legivel e compacta a sua declaração:
+                </p>
+                
+                <p class="code">
+                    let variavel = (parametros, ..) => expressão 
+                </p>
+                <p class="code">
+                    let variavel = (parametros, ..) => { codigo; return algo; }
+                </p>
+
+                <p>
+                   Um exemplo é apresentado abaixo, onde uma função recebe uma frase qualquer e substitui todos os ';' por 'tab';
+                </p>
+                
+                <p class="code">
+                    let mudaFrase = (string) => string.replace(";", "\t")
+                    <br>console.log(mudaFrase("Aabbb"));
+                    <br># AAbbb
+                </p>
+            </article>
+        </section>
+        
+        <section>
+            <article>
+                <h2>Alterando páginas com o Javascript</h2>
+                <p>
+                    Algo muito interessante é a possibilidade de alterar elementos de uma página (objeto document) por meio do Javascript. Para isso deve-se lembrar que uma página é composta por diferentes elementos do DOM, e desta forma, pode-se obter os valores destes objetos, ou alterar estes. Talvez a forma mais comum é por meio do '<b>getElementById()</b>', que busca um elemento na página por meio do id único (não pode haver mais de um elemento com o mesmo id). Outras formas são por meio do '<b>getElementsByClassName()</b>', e '<b>getElementByTagName()</b>', que realizam a busca por meio do nome da 'class' ou do 'name' respectivamente.
+                </p>
+                <p class="code">
+                    Capturando o valor de um elemento de id = 'id' e colocando na variável 'txt':
+                    <br>let txt = document.getElementById('id');
+                </p>
+                <p>
+                    Do mesmo modo que podemos capturar o valor de um determinado elemento, podemos alterar este por meio do <b>innerHTML()</b>, que por sua vez 'injeta' no elemento HTML original o novo conteúdo, inclusive novas tags do HTLM. No exemplo abaixo, é feita a alteração do texto toda vez que o botão 'Altera texto' é clicado
+                </p>
+                <button type= "button" onclick="mudaTexto()">Altera texto</button>
+                <p id="id">Texto inicial</p>
+                <p>
+                    Alem disso, é possivel realizar a passagem do elemento diretamente para a função, por meio do parametro 'this'
+                </p>
+                
 
             </article>
         </section>
-
 
         <footer>
             <p>Informações de autoria</p>
