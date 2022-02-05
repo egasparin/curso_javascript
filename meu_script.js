@@ -1,7 +1,26 @@
+// Promise
+
+const fs = require('fs')
+
+fs.readFile('./arquivo.txt', (err, content) => {
+    console.log(String(content))
+});
+
+
+
+
+
+
 function mudaTexto(){
     document.getElementById("id").innerHTML = "<b>Mudou o texto e adicionou negrito</b>";
 }
 
+// Declaraçao normal
+function redText(elemento){
+    elemento.innerHTML = "<b>Mudou o texto e adicionou negrito</b>";
+}
+// Declaração Arrow-Function
+// let redText = (elemento) => { elemento.innerHTML = "<b>Mudou o texto e adicionou negrito</b>";}
 
 /*
 function horario(){

@@ -82,11 +82,77 @@
                 </p>
                 <p class="code">um_array = {chave:"valor"};</p>
 
+                <h3>Objetos e Classes</h3>
+                <p>
+                    Objetos são estruturas que possuem atributos e métodos, sendo muito úteis para representar abstrações de entidades reais, como ocorre no cadastro de um usuário. A declaração de um objeto é realizada na forma:
+                </p>
+                <p class="code">
+                    var objeto = {
+                    <br>atributo1: valor,
+                    <br>atributo2: valor,
+                    <br>metodo1: function(){ code; },
+                    <br>metodo1: function(){ code; }
+                    <br>};
+                </p>
+                <p>
+                    Para acessar os atributos e métodos da função deve-se seguir o seguinte modelo:
+                </p>
+                <p>Acessando (1) ou modificando (2) um atributo
+                    <p class="code">
+                        (1) objeto.atributo;
+                        <br>(2) objeto.atributo = novo_valor;
+                    </p>
+                    Chamando um método:
+                    <p class="code">
+                        (3) objeto.metodo();
+                    </p>    
+                </p>
+                <p>
+                    Já uma classe é uma função que gera novas variáveis (objetos) com as características definidas nesta, como se fosse um molde ou modelo para novos objetos. Para criar uma classe, deve-se digitar a palavra chave 'class' seguida do nome desta. Os métodos são declarados como no caso de objetos, mas os atributos devem ser criados dentro de um método construtor 'constructor()':
+                    <b><br>class Pessoa{
+                    <br>&emsp;constructor(param1){
+                    <br>&emsp;&emsp;this.atributo1 = param1; 
+                    <br>&emsp;}
+                    <br>&emsp;metodo1(){
+                    <br>&emsp;&emsp;console.log("Classes são legais!"); 
+                    <br>&emsp;}
+                    <br>&emsp;metodoSoma(a, b){ 
+                    <br>&emsp;&emsp;return a + b;
+                    <br>&emsp;}
+                    <br>};
+                    </b> 
+                </p>
+                <p>
+                    Para criar uma instância desta classe, primeiramente cria-se uma variável que vai armazenar esta, após isso é passado para essa variável uma nova instância criada com a palavra chave 'new' e o nome da classe seguido de parênteses.
+                    <p class="code">
+                        var variável = new Nome_da_classe();<br>
+                        var eduardo = new Pessoa();
+                    </p> 
+                    Ou pode-se já optar por passar os valores dos atributos como parametros na criação desta:
+                    <p class="code">
+                        var eduardo = new Pessoa("valor1", "valor2");
+                    </p> 
+                </p>
+                <h3>Herança</h3>
+                <p>
+                    Pode-se reutilizar o código de classes já criadas e criar novas mais especializadas por meio da herança. Para isso, deve-se usar a palavra chave 'extends' e importando os atributos e métodos por meio do método 'super' dentro do constructor:
+                </p>
+                <p><b>
+                    class Professor extends Pessoa{
+                    <br>&emsp;constructor(nome, idade, materia){
+                    <br>&emsp;&emsp;super(nome, idade);
+                    <br>&emsp;&emsp;this.novo_atributo = valor;
+                    <br>&emsp;}
+                    <br>&emsp;darAula(){
+                    <br>&emsp;&emsp;console.log("Este metodo não esta presente na classe pai");
+                    <br>&emsp;}
+                    <br>}
+                </b></p>
+
                 <h3>Estrutura Condicionais e de Repetição</h3>
                 <p>
                     O Javascript possui como principal estrutura condicional o 'if', sendo sua estrutura apresentada a seguir e bastante similar a do C e do Java.
-                </p>
-                
+                </p>               
                 <p class="code">
                     if(condition){ 
                     <br>codigo para executar se verdade
@@ -201,10 +267,44 @@
                 <button type= "button" onclick="mudaTexto()">Altera texto</button>
                 <p id="id">Texto inicial</p>
                 <p>
-                    Alem disso, é possivel realizar a passagem do elemento diretamente para a função, por meio do parametro 'this'
+                    Alem disso, é possivel realizar a passagem do elemento diretamente para a função, por meio do parametro 'this', evitando assim algumas linhas de código e aumentando o reaproveitamento das funções criadas.
                 </p>
-                
+                <p class="code">
+                    No HTML:
+                    <br>&ltp onclick="umaFuncao(this)"&gtAo clicar, o texto ficará em negrito&lt/p&gt
+                    <br>
+                    <br>No Javascript
+                    <br>function umaFuncao(ELEMENTO){
+                    <br>ELEMENTO.innerHTML = "<b>Mudou o texto para negrito</b>";
+                    <br>}
+                    <br>
+                    <br>ou em Arrow function
+                    <br>let umaFuncao = (elemento) => { elemento.innerHTML = "<b>Mudou o texto para negrito</b>";}
 
+                </p>
+                <p onclick="redText(this)">Para exemplificar, ao clicar neste elemento, o texto ficará em negrito</p>
+                <p>
+                    Vale destacar ainda outras funções de mouse muito úteis para uso:   
+                    <li><b>onmouseover = chamada_da_funcao(): </b> realiza a chamada da função referenciada no momento em que o mouse for POSICIONADO EM CIMA do elemento.</li>
+                    <li><b>onmouseout = chamada_da_funcao(): </b> realiza a chamada da função referenciada no momento em que o mouse SAIR de cima do elemento.</li>
+                    <li><b>onchange = chamada_da_funcao(): </b> cria uma lista de opções, permitindo dentro do Javascript, realizar diferentes ações conforme a seleção realizada</li>
+                    <li><b>onload = chamada_da_funcao(): </b> realiza a chamada da função referenciada no momento em que a página for carregada.</li>
+                </p>
+            </article>
+        </section>
+
+        <section>
+            <article>
+                <h2>Promise</h2>
+
+                <p> https://www.youtube.com/watch?v=8s_1WH9JNec</p>
+                <p>https://www.youtube.com/watch?v=7Bs4-rqbCQc</p>
+            </article>
+        </section>
+
+        <section>
+            <article>
+                <h2>Funções async e await</h2>
             </article>
         </section>
 
