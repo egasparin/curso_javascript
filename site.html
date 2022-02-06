@@ -296,15 +296,85 @@
         <section>
             <article>
                 <h2>Promise</h2>
-
-                <p> https://www.youtube.com/watch?v=8s_1WH9JNec</p>
-                <p>https://www.youtube.com/watch?v=7Bs4-rqbCQc</p>
+                <p>
+                    Para entender o promise, primeiro deve-se entender o porquê dele existir. Ele é muito util para resolver problemas onde precisamos esperar uma função retornar para executar outra, e a primeira alternativa encontrada, foi realizar o processo por meio de callbacks. O problema de adicionar nomes e listar é apresentado abaixo.
+                </p>
+                <img class="codigo" src="callback.png">
+                <p>
+                    O que esta acontecendo? basicamente ha duas funções, com diferentes tempos de execução, e por meio do uso de callback, a segunda função somente é executada quando a primeira realizar a chamada dela, por meio da instrução 'callback()'. Caso fosse chamada uma função na sequencia da outra, o javascript iria executar a impressão da lista de nomes primeiro do que a adição, pois essa ultima tem um tempo de resposta maior.
+                </p>
+                <p>
+                    Uma promisse é diferente de uma callack, pois permite um melhor disposição vertical do código implementado, tornando mais legivel e assim mais facil de realizar manutenção. A estrutura de uma promisse pode ser representada como uma função com dois parametros, um 'reject' em caso de erro e um 'resolve' em caso de sucesso
+                </p>
+                <p><b>
+                        let minhaPromisse = (resolve, reject) => {
+                    <br>&emsp;// declaração de variaveis e códigos;
+                    <br>&emsp;if(error) {
+                    <br>&emsp;&emsp;reject(error);
+                    <br>&emsp;} else {
+                    <br>&emsp;&emsp;resolve(result);
+                    <br>&emsp;}
+                    <br>};
+                    </b>
+                    <br>Assim a criação da promisse com base na estrutura declarada fica:
+                    <b>
+                    <br>let promise = new Promisse(minhaPromise);
+                    </b>
+                    <br>A chamada da promise;
+                    <b>
+                    <br>promise
+                    <br>&emsp;.then(umaFunção);
+                    <br>&emsp;.then(outraFuncao);
+                    <br>&emsp;.catch(retornoEmCasoDeErro = () => {console.error});
+                    <br>&emsp;.finally(ultimaQueSeraExecutada = () => {
+                    <br>&emsp;&emsp;console.log("Acabou");
+                    <br>&emsp;});
+                    <br>                
+                </b></p>
+                <p>
+                    Desta forma, podemos resolver o problema anteriormente resolvido com callback, por meio do promise:
+                </p>
+                <img class="codigo" src="promise.png">
             </article>
         </section>
 
         <section>
             <article>
                 <h2>Funções async e await</h2>
+                <p>
+                    As funções async e await trazem ainda mais praticidade ao uso do promise, tornando mais legivel ainda o código. Vale ressaltar que a promise continua sendo obrigatória, bem como a definição desta, com a modificação ocorrendo apenas na chamada da função, substituindo a estrutura '.then' por uma mais linear:
+                </p>
+                <p><b>
+                    let funcaoAssincrona = async () =>{
+                        <br>&emsp;// chama a primeira função e aguarda o retorno dela:
+                        <br>&emsp;await umaFunção(parametros);
+                        <br>&emsp;await outraFuncao(parametros);
+                        <br>};
+                    
+                    </b><br>// Executando a funcao assincrona;
+                    <br><b>funcaoAssincrona();
+                
+                    </b><br>Também podemos tratar erros por meio do 'try-catch':
+                    
+                    <br><b>let funcaoAssincrona = async () =>{
+                        <br>&emsp;try{
+                        <br>&emsp;&emsp;await umaFunção(parametros);
+                        <br>&emsp;&emsp;await outraFuncao(parametros);
+                        <br>&emsp;} catch(error) {
+                        <br>&emsp;&emsp;console.error;
+                        <br>&emsp;}
+                        <br>};
+                
+                    </b><br>// Executando a funcao assincrona;
+                    <br><b>funcaoAssincrona();
+                </b></p>
+                <p>
+                    Desta forma, podemos resolver o problema resolvido com promise, por meio do 'async/await', apenas modificando a chamada:
+                </p>
+                <img class="codigo" src="async-await.png">
+                <p>
+                    Destaco que o código desta funções esta disponível no arquivo 'meu_script.js', executado no carregamento da página.
+                </p>
             </article>
         </section>
 

@@ -4,6 +4,12 @@ img{
 	margin: auto;
 }
 
+.codigo{
+    width: 70%; /*Largura da imagem*/
+	display: block;
+	margin: auto;
+}
+
 footer{
 	position: relative;
     background-color: #f1ecece8;
